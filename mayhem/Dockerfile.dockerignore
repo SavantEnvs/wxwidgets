@@ -1,0 +1,7 @@
+# Effective .dockerignore for `docker build -f mayhem/Dockerfile` (BuildKit prefers it over a root one).
+# Bake the FULL repo incl. .git; drop only local build trees (upstream's own tracked build/ must stay).
+/mayhem/build-fuzz
+/mayhem/build-test
+.DS_Store
+*.swp
+*~

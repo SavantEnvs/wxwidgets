@@ -1,0 +1,11 @@
+project: savantenvs/wxwidgets
+target: fileconf
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fileconf/testsuite
+cmds:
+  - cmd: /mayhem/mayhem/bin/fuzz_fileconf
+    libfuzzer: true
+    timeout: 10
+    env:
+      wx_exit_on_assert: '1'
